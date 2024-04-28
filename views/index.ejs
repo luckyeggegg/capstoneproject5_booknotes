@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Suranna&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/fis@7.0.0/css/fis.min.css"/>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+
+      <link rel="stylesheet" href="/styles/main.css">
+      
+      <title>YF's Bootnotes</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0"></div>
+  
+        <h2 class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          YF's Booknotes
+        </h2>
+  
+        <div class="col-md-3 text-end"></div>
+      </header>
+    </div>
+
+    <div class="container introduction border-bottom">
+      <p>I'm a keen fan of fantansy and science fiction. Recently, I'm also learning cooking.
+      <p>Here is a list of the relevant books I like. You can find it from your local library or anywhere else.</p>
+      <p>You can sort the books by most-recent "Reading-time", most-recent "Publishing-year", or most-high "Recommendation-rate". The default display is according to the most-recent "Readng-time".</p>
+      <div class="btn-group dropend order">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Order by
+        </button>
+        <ul class="dropdown-menu order">
+          <li><a class="dropdown-item" href="#" data-order="reading_date">Reading Date</a></li>
+          <li><a class="dropdown-item" href="#" data-order="publication_year">First-publishing Year</a></li>
+          <li><a class="dropdown-item" href="#" data-order="rating">Recommendation rate</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <section class="main">
+      <div class="container booklist">
+        <% bookList.forEach(function(book){ %>
+          <div class="book-info" id="book<%= book.book_id%>">
+            <figure>
+              <img src="<%= book.coverImg%>" alt="<%= book.title %>"/>
+            </figure>
+            <h2>
+              <%= book.title %> By <i><%= book.name%></i>
+            </h2>
+            <small>
+              <span>First published in: <%= book. publication_year %></span><br/>
+              <span>Date read: <%= book.formatted_reading_date %></span><br/>
+              <span>Type: <%= book.classification %></span><br/>
+              <span>How strongly I recommend it: <strong><%= book.rating %></strong>/10</span>
+            </small>
+            <p class="summary">
+              <%= book.summary %>
+            </p>
+            <p class="nearby">
+            <strong>Find a book nearby via: <a href="<%= book.nearby_check %>"><%= book.nearby_check %></a></strong>
+            </p>
+            <div class="buttonForm">
+              <form action="/update/<%= book.book_id %>" method="get">
+                <button type="submit" class="btn btn-success me-3 btn-custom-size edit">Update summary</button>
+              </form>
+    
+              <button class="btn btn-danger btn-custom-size delete-button delete" data-book-id="<%= book.book_id  %>">Delete this book</button>
+            </div>
+          </div>
+        <% }) %>
+
+      </div>
+      
+      
+    </section>
+         
+
+      
+
+    
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="https://www.linkedin.com/" class="nav-link px-2 text-body-secondary"><img src="/assets/linkedin.png" height="30" alt="LinkedIn"/></a></li>
+          <li class="nav-item"><a href="https://mail.google.com/" class="nav-link px-2 text-body-secondary"><img src="/assets/mail.png" height="30" alt="email"/></a></li>
+          <li class="nav-item"><a href="https://github.com/luckyeggegg/" class="nav-link px-2 text-body-secondary"><img src="/assets/github.png" height="30" alt="github"/></a></li>
+        </ul>
+        <p class="text-center text-body-secondary">© <%= new Date().getFullYear() %> YF Sun</p>
+        <p class="text-center text-body-secondary">Thanks to "Open Library Covers API (https://openlibrary.org/dev/docs/api/covers)" for providing the book cover images.</p>
+      </footer>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+    <script src="/script/function.js"></script>
+  </body>
+</html>

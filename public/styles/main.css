@@ -1,0 +1,127 @@
+body {
+  background: #EEEEEE;
+  font-family: "Suranna", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #76ABAE;
+  max-width: 50rem;
+  margin: 0 auto
+}
+
+.introduction {
+  font-size: 1.4rem;
+}
+
+figure img {
+  float:left;
+  margin-right: 2em;
+  height: 187px;
+}
+
+.order {
+  margin: 0 0 1em 0;
+}
+
+.booklist {
+  margin: 0 0 8em 0;
+  color: #222831
+}
+
+.book-info {
+  margin: 0 0 5em 0;
+}
+
+small, .small, footer, dl#tweetlist dt, figcaption {
+  font-size: 1.2rem;
+  color: #8B322C;
+}
+
+.summary {
+  font-size: 20px;
+}
+
+.nearby {
+  font-size: 1.3rem
+}
+
+.buttonForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-custom-size {
+  width: 180px; 
+  font-size: 120%;
+}
+
+.d-flex {
+    display: flex!important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+  display: block;
+  color: #496989; /* You can change the color to match your design */
+}
+
+input[name="title"], input[name="writer"] {
+  width: 75%; /* Adjust width to your preference */
+  margin-bottom: 1rem; /* Add some margin to separate the inputs from each other */
+  display: block; /* Make sure inputs are block-level to respect width */
+  margin-right: auto;
+}
+
+textarea[name="summary"] {
+  width: calc(100%);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+  font-family: "Suranna", sans-serif;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+.new-edit {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#modifyContainer {
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.newPostForm {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #ececec;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+  rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  outline: none;
+  overflow: auto;
+}
+
+h3, h5 {
+  color:#496989;
+  text-align: center;
+}
+

@@ -1,0 +1,23 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "An online currency converter by calling \"https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/base_code/target_code\" API.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "flag-icons": "^7.2.1",
+    "fs": "^0.0.1-security",
+    "pg": "^8.11.5"
+  }
+}
