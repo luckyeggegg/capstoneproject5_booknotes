@@ -24,6 +24,7 @@ Express.js
 - PostgreSQL
 - A query file is included.
 - An excel file is included as the dummy data
+- The logic design of the tables are included in the "booknotesDB.drawio". 
 
 # others
 Most book-cover images are returned from the Open Library Covers API (https://openlibrary.org/dev/docs/api/covers) if available.
